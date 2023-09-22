@@ -6,7 +6,7 @@
 #define RUN2(take_mod, v1n, v2n, fn, ideal) \
   { allocs2(take_mod, &v1, v1n);\
     allocs2(take_mod, &v2, v2n);\
-    assert(fn(v1, v1n, v2, v2n) == ideal);\
+    assert(fn(v1n, v1, v2n, v2) == ideal);\
     free(v1);\
     free(v2);}
 
@@ -44,11 +44,11 @@ int main(void)
 {
   {
     allocs();
-    assert(sum(v1,v)              == 450000000);
-    assert(sum_squares(v1,v)      == 2850000000);
-    assert(sum_squares_even(v1,v) == 1200000000);
-    assert(maps(v1,v)             == 2268000000000);
-    assert(filters(v1,v)          == 170000000);
+    assert(sum(v,v1)              == 450000000);
+    assert(sum_squares(v,v1)      == 2850000000);
+    assert(sum_squares_even(v,v1) == 1200000000);
+    assert(maps(v,v1)             == 2268000000000);
+    assert(filters(v,v1)          == 170000000);
     free(v1);
   }
 
@@ -67,7 +67,7 @@ int main(void)
     int64_t arr2[] = {1,0,255,0,255,255,0,255,255,255,1};
     // uint8_t arr1[] = {0,1,255,0,255,1,255,255};
     // uint8_t arr2[] = {1,0,255,0,255,255,0,255,255,255,1};
-    assert(decoding(arr1,8,arr2,11) == 6);
+    assert(decoding(8,arr1,11,arr2) == 6);
   }
 
   printf("All tests were completed!\n");

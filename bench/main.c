@@ -43,11 +43,11 @@
   { allocs();\
     int64_t i;\
     for (i=0; i<WARMUP; ++i) {\
-      result = BENCHF1 (v1,v);\
+      result = BENCHF1 (v,v1);\
     }\
     for (i=0; i<REPS; ++i) {\
       double start = time_in_mili();\
-      result = BENCHF1 (v1,v);\
+      result = BENCHF1 (v,v1);\
       double end = time_in_mili();\
       results[i] = (end - start);\
     }}
@@ -56,11 +56,11 @@
     allocs2(take_mod, &v2, v2n);\
     int64_t i;\
     for (i=0; i<WARMUP; ++i) {\
-      result = BENCHF2 (v1,v1n, v2,v2n);\
+      result = BENCHF2 (v1n,v1, v2n,v2);\
     }\
     for (i=0; i<REPS; ++i) {\
       double start = time_in_mili();\
-      result = BENCHF2 (v1,v1n, v2,v2n);\
+      result = BENCHF2 (v1n,v1, v2n,v2);\
       double end = time_in_mili();\
       results[i] = (end - start);\
     }}

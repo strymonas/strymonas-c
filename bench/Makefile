@@ -1,4 +1,4 @@
-CC=gcc
+# CC=gcc-11
 # CFLAGS=-W -Wall -O3 -lm -save-temps
 CFLAGS=-W -Wall -O3 -lm
 

@@ -1,6 +1,6 @@
 #!/bin/sh
 # gcc-11 -Q --help=warnings 
-CC="gcc-11"
+CC="gcc"
 # CFLAGS="-W -Wall -Wno-tautological-compare -O3 -lm -save-temps"
 CFLAGS="-W -Wall -Wno-tautological-compare -O3 -lm"
 OBJS="utils.o benchmarks_gen.c main.c"
